@@ -1,6 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import { handler } from './build/handler';
+import fs from 'fs';
 import { superConsole } from './utils';
 
 // Verification checks
@@ -20,20 +20,46 @@ if (!process.env.DB_PASSWD) {
 	throw new Error('DB_PASSWD is not defined in .env.');
 }
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+const hasBeenBuilt = ((): false | string => {
+	let toReturn: false | string = false;
+	try {
+		toReturn = fs.readFileSync('./build/handler.js').toString('utf-8');
+	} catch (err) {
+		superConsole.warn(
+			'No build/handler.js file, front is probably not built or an error has occurred while reading the file.'
+		);
+		superConsole.warn('More information:' + err);
+	}
 
-app.use(express.json());
+	return toReturn;
+})();
 
-app.use(handler);
+const App = express();
+const PORT = Object.freeze(process.env.PORT || 3000);
 
-app.use((req, res, next) => {
+App.use(express.json());
+
+App.use('/api', (_req, res, next) => {
+	// TODO: implement an actual API
+	superConsole.info('API not yet implemented.');
+	res.status(404);
+	next();
+})
+
+// If in production, or if vite has been built, use its handler
+if ((process.env.PRODUCTION && hasBeenBuilt) || hasBeenBuilt) {
+	// eslint-disable-next-line @typescript-eslint/no-var-requires
+	const { handler } = await import('./build/handler');
+	App.use(handler);
+}
+
+App.use((req, res, next) => {
 	console.log('');
 	superConsole.info(`${req.method} - ${req.url} - ${res.statusCode}`, 'express.js');
 	next();
 });
 
-app.listen(PORT, () => {
+App.listen(PORT, () => {
 	superConsole.ready(`Server running on port ${PORT}.`, 'express.js');
 	mongoose
 		.connect(process.env.MONGO_URI as string)
@@ -42,7 +68,7 @@ app.listen(PORT, () => {
 			console.log('');
 			superConsole.ready('App started!');
 		})
-		.catch((err) =>
+		.catch(err =>
 			superConsole.error(
 				'An error occurred while trying to connect to MongoDB:\n    ' + err,
 				'mongoose'
