@@ -1,22 +1,46 @@
 {
-  "name": "adadas",
-  "module": "app.ts",
-  "type": "module",
-  "scripts": {
-    "start": "bun run .",
-    "dev": "concurrently -p none --hide 0 \"start http://127.0.0.1:3000\" \"bun run . --watch\""
-  },
-  "devDependencies": {
-    "@types/bun": "latest",
-    "@types/express": "^4.17.21",
-    "@types/mongoose": "^5.11.97",
-    "concurrently": "^8.2.2"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  },
-  "dependencies": {
-    "express": "^4.19.2",
-    "mongoose": "^8.4.0"
-  }
+	"name": "adadas",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"deploy": "bun run build; bun run api",
+		"api": "bun run app.ts",
+		"api-dev": "bun run app.ts --watch",
+		"vite-dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --check . && eslint .",
+		"format": "prettier --write ."
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/adapter-node": "^5.0.1",
+		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"@types/bun": "latest",
+		"@types/eslint": "^8.56.0",
+		"@types/express": "^4.17.21",
+		"@types/mongoose": "^5.11.97",
+		"@typescript-eslint/eslint-plugin": "^7.0.0",
+		"@typescript-eslint/parser": "^7.0.0",
+		"concurrently": "^8.2.2",
+		"eslint": "^8.56.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-svelte": "^2.35.1",
+		"prettier": "^3.1.1",
+		"prettier-plugin-svelte": "^3.1.2",
+		"svelte": "^4.2.7",
+		"svelte-check": "^3.6.0",
+		"tslib": "^2.4.1",
+		"vite": "^5.0.3"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	},
+	"dependencies": {
+		"express": "^4.19.2",
+		"mongoose": "^8.4.0"
+	}
 }
