@@ -4,6 +4,8 @@
 	"private": true,
 	"scripts": {
 		"deploy": "bun run build; bun run api",
+		"dev": "bun run build; bun run api-dev",
+		"dev:no-build": "bun run api-dev",
 		"api": "bun run app.ts",
 		"api-dev": "bun run app.ts --watch",
 		"vite-dev": "vite dev",
