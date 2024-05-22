@@ -1,6 +1,7 @@
 <!-- Use of Markdown All in One -> https://marketplace.cursorapi.com/items?itemName=yzhang.markdown-all-in-one -->
+<!-- Ignoring MD03/no-inline-html for the sake of centering -->
 
-<div align=center>
+<div align=center> <!-- ignoring MD041/first-line-heading convention for the logo because it's cool -->
 
 ![Adadas Logo](logo.svg)
 
@@ -74,4 +75,5 @@ c. **Community:** Create a community of athletes where they can share their prog
 - **Svelte:** For more complex features like real-time news feeds, instant notifications, and group discussions.
 
 ### Conclusion
+
 This project offers a comprehensive and innovative platform for "Adadas", integrating both HTMX for quick and simple interactions, and Svelte for advanced interactive features. This creates a smooth and engaging user experience, meeting the needs of modern athletes.
