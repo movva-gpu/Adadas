@@ -1,4 +1,2 @@
-# Ignore files for PNPM, NPM and YARN
-pnpm-lock.yaml
-package-lock.json
-yarn.lock
+# Handled with Markdown All In One VS Code extension in order to respect Markdown conventions which Prettier doesn't always follows.
+*.md

@@ -1,8 +1,19 @@
-{
-	"useTabs": true,
-	"singleQuote": true,
-	"trailingComma": "none",
-	"printWidth": 100,
-	"plugins": ["prettier-plugin-svelte"],
-	"overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }]
-}
+useTabs: true
+singleQuote: true
+trailingComma: none
+printWidth: 100
+endOfLine: crlf
+arrowParens: avoid
+bracketSameLine: false
+bracketSpacing: true
+htmlWhitespaceSensitivity: strict
+proseWrap: always
+semi: true
+singleAttributePerLine: true
+tabWidth: 4
+plugins:
+    - prettier-plugin-svelte
+overrides:
+    - files: '*.svelte'
+      options:
+          parser: svelte
