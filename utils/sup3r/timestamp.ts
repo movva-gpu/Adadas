@@ -7,12 +7,11 @@ type sup3rTimestampType = {
 export function Timestamp(): sup3rTimestampType {
 	const date = new Date(Date.now());
 	return {
-		formatted: (
+		formatted:
 			`${date.getUTCMonth()}/${date.getUTCDate()}/${date.getUTCFullYear()}` +
 			' ' +
-			`${date.getUTCHours()}:${date.getUTCMinutes()}:${date.getUTCSeconds()}`
-		),
+			`${date.getUTCHours()}:${date.getUTCMinutes()}:${date.getUTCSeconds()}`,
 		unformatted: `${date.getUTCMonth()}${date.getUTCDate()}${date.getUTCFullYear()}${date.getUTCHours()}${date.getUTCMinutes()}${date.getUTCSeconds()}`,
-		number: Date.now(),
+		number: Date.now()
 	};
 }

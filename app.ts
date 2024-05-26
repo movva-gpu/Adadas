@@ -44,7 +44,7 @@ App.use('/api', (_req, res, next) => {
 	sup3r.con.info('API not yet implemented.');
 	res.status(404);
 	next();
-})
+});
 
 // If in production, or if vite has been built, use its handler
 if ((process.env.PRODUCTION && hasBeenBuilt) || hasBeenBuilt) {
