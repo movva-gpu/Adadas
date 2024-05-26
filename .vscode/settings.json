@@ -1,3 +1,20 @@
 {
-	"cSpell.words": ["Adadas", "HTMX"]
+	"cSpell.words": [
+		"adadas",
+		"Adadas",
+		"datetime",
+		"fontsource",
+		"Freepik",
+		"HTMX",
+		"opsz",
+		"Wetton"
+	],
+	"emmet.syntaxProfiles": {
+		"html": {
+			"inline_break": 1
+		}
+	},
+	"conventionalCommits.scopes": [
+		"frontend"
+	]
 }

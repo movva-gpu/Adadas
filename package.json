@@ -41,6 +41,11 @@
 		"typescript": "^5.0.0"
 	},
 	"dependencies": {
+		"@fontsource-variable/dm-sans": "^5.0.6",
+		"@fontsource-variable/material-symbols-rounded": "^5.0.31",
+		"@fontsource-variable/work-sans": "^5.0.19",
+		"@fontsource/dm-sans": "^5.0.21",
+		"@fontsource/work-sans": "^5.0.18",
 		"express": "^4.19.2",
 		"mongoose": "^8.4.0"
 	}
