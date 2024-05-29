@@ -1,20 +1,21 @@
 {
 	"cSpell.words": [
+		"formulahendry",
+		"redwan",
+		"hossain",
+		"vivaxy",
+		"dbaeumer",
+		"yzhang",
+		"esbenp",
 		"adadas",
 		"Adadas",
 		"datetime",
 		"fontsource",
 		"Freepik",
 		"HTMX",
+		"mcferrin",
 		"opsz",
+		"pixlr",
 		"Wetton"
-	],
-	"emmet.syntaxProfiles": {
-		"html": {
-			"inline_break": 1
-		}
-	},
-	"conventionalCommits.scopes": [
-		"frontend"
 	]
 }
