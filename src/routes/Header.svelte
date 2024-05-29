@@ -5,7 +5,7 @@
 </script>
 
 <header>
-	<Ad></Ad>
+	<Ad variant="lower-price"></Ad>
 	<nav>
 		<label
 			class="hamburger"
@@ -61,6 +61,8 @@
 			border-radius: 100lvw;
 
 			background-color: var(--color-dark);
+
+			transition: 0.67s ease translate;
 		}
 	}
 
@@ -74,6 +76,30 @@
 		width: 48px;
 
 		cursor: pointer;
+
+		&:hover {
+			& .line-1 {
+				translate: 0 -4px;
+			}
+
+			& .line-3 {
+				translate: 0 4px;
+			}
+		}
+
+		&:active {
+			transition-duration: 0.5s;
+
+			& .line-1 {
+				translate: 0 2px;
+				transition-duration: inherit;
+			}
+
+			& .line-3 {
+				translate: 0 -2px;
+				transition-duration: inherit;
+			}
+		}
 	}
 
 	header {
