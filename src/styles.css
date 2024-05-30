@@ -29,6 +29,12 @@
 	--scroll-padding: 6.5em;
 }
 
+*,
+*::before,
+*::after {
+	/* cursor: none; */
+}
+
 @layer reset {
 	*,
 	*::after,
@@ -214,7 +220,7 @@
 			text-decoration: none;
 
 			filter: drop-shadow(0 0 0 transparent) drop-shadow(0 0 0 transparent);
-			transition: filter 0.8s ease;
+			transition: filter 0.4s ease;
 
 			&::after {
 				content: '';
@@ -227,7 +233,7 @@
 				width: 100%;
 				transform-origin: right;
 				background-color: currentColor;
-				transition: scale 0.67s ease;
+				transition: scale 0.33s ease;
 				z-index: 1000;
 			}
 

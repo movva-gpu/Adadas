@@ -13,6 +13,7 @@
 	version="1.1"
 	fill="white"
 	xmlns="http://www.w3.org/2000/svg"
+	data-interactive
 >
 	<path d="m 109.718,132 5.791,-10.038 H 102.551 L 100,126.394 Z" />
 	<path d="M 132.781,111.253 120.797,132 l -9.719,-5.606 8.745,-15.141 z" />

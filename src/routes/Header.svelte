@@ -5,7 +5,7 @@
 </script>
 
 <header>
-	<Ad variant="lower-price"></Ad>
+	<Ad variant="check-out"></Ad>
 	<nav>
 		<label
 			class="hamburger"
@@ -62,7 +62,7 @@
 
 			background-color: var(--color-dark);
 
-			transition: 0.67s ease translate;
+			transition: 0.33s ease translate;
 		}
 	}
 
@@ -88,7 +88,7 @@
 		}
 
 		&:active {
-			transition-duration: 0.5s;
+			transition-duration: 0.33s;
 
 			& .line-1 {
 				translate: 0 2px;
@@ -158,8 +158,8 @@
 			0 0 0 100vw color-mix(in srgb, var(--color-dark), transparent 30%);
 
 		transition:
-			translate 1s ease,
-			box-shadow 1s;
+			translate 667ms ease,
+			box-shadow 667ms;
 
 		z-index: 100;
 
@@ -175,12 +175,12 @@
 			width: 1.2em;
 			aspect-ratio: 1;
 
-			transition: rotate 1.8s cubic-bezier(0.19, 1, 0.22, 1);
+			transition: rotate 0.8s cubic-bezier(0.19, 1, 0.22, 1);
 
 			cursor: pointer;
 
 			&:hover {
-				transition: rotate 667ms cubic-bezier(0.25, 0.1, 0.25, 1);
+				transition: rotate 333ms cubic-bezier(0.25, 0.1, 0.25, 1);
 			}
 
 			& span {
@@ -211,8 +211,8 @@
 		&:has(a:hover) a:not(:hover) {
 			opacity: 0.5;
 			transition:
-				padding 889ms ease,
-				opacity 667ms;
+				padding 667ms ease,
+				opacity 667ms linear;
 		}
 
 		& a {
@@ -221,14 +221,14 @@
 			line-height: 1;
 
 			transition:
-				padding 1s ease,
-				opacity 667ms;
+				padding 667ms ease,
+				opacity 667ms linear;
 
 			&:hover {
 				padding-inline-start: 1.5em;
 				transition:
-					padding 889ms ease,
-					opacity 667ms;
+					padding 333ms ease,
+					opacity 333ms linear;
 			}
 
 			&::before {
@@ -266,8 +266,8 @@
 				0 0 0 100vw transparent;
 
 			transition:
-				translate 1s ease,
-				box-shadow 1s;
+				translate 667ms ease,
+				box-shadow 667ms linear;
 		}
 	}
 </style>

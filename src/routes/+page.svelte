@@ -18,6 +18,7 @@
 				src={cap}
 				alt="I know nice cap r?"
 				draggable="false"
+				data-interactive="true"
 			/>
 		</div>
 		<h1> AdadasCoach&trade; </h1>

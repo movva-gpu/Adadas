@@ -1,34 +1,31 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-
 	"settings": {
 		"emmet.syntaxProfiles": {
 			"html": {
 				"inline_break": 1
 			}
 		},
-
-		"conventionalCommits.scopes": [
-			"frontend",
-			"backend"
-		]
+		"conventionalCommits.scopes": ["frontend", "backend"]
 	},
-
+	"folders": [
+		{
+			"path": "."
+		}
+	],
 	"extensions": {
 		"recommendations": [
-			"formulahendry.auto-close-tag",
-			"redwan-hossain.auto-rename-tag-clone",
-			"streetsidesoftware.code-spell-checker",
-			"vivaxy.vscode-conventional-commits",
+			"DavidAnson.vscode-markdownlint",
 			"dbaeumer.vscode-eslint",
-			"yzhang.markdown-all-in-one",
 			"esbenp.prettier-vscode",
+			"formulahendry.auto-close-tag",
 			"oven.bun-vscode",
-			"svelte.svelte-vscode"
+			"redwan-hossain.auto-rename-tag-clone",
+			"richie5um2.vscode-sort-json",
+			"streetsidesoftware.code-spell-checker",
+			"svelte.svelte-vscode",
+			"vivaxy.vscode-conventional-commits",
+			"yoavbls.pretty-ts-errors",
+			"yzhang.markdown-all-in-one"
 		]
 	}
 }
