@@ -1,0 +1,34 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+
+	"settings": {
+		"emmet.syntaxProfiles": {
+			"html": {
+				"inline_break": 1
+			}
+		},
+
+		"conventionalCommits.scopes": [
+			"frontend",
+			"backend"
+		]
+	},
+
+	"extensions": {
+		"recommendations": [
+			"formulahendry.auto-close-tag",
+			"redwan-hossain.auto-rename-tag-clone",
+			"streetsidesoftware.code-spell-checker",
+			"vivaxy.vscode-conventional-commits",
+			"dbaeumer.vscode-eslint",
+			"yzhang.markdown-all-in-one",
+			"esbenp.prettier-vscode",
+			"oven.bun-vscode",
+			"svelte.svelte-vscode"
+		]
+	}
+}
