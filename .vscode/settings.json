@@ -2,19 +2,25 @@
 	"cSpell.words": [
 		"adadas",
 		"Adadas",
+		"dabedidabedai",
+		"Danyella",
 		"datetime",
+		"dbaeumer",
+		"esbenp",
 		"fontsource",
+		"formulahendry",
 		"Freepik",
+		"hossain",
 		"HTMX",
+		"mcferrin",
 		"opsz",
-		"Wetton"
-	],
-	"emmet.syntaxProfiles": {
-		"html": {
-			"inline_break": 1
-		}
-	},
-	"conventionalCommits.scopes": [
-		"frontend"
+		"Parens",
+		"pixlr",
+		"redwan",
+		"Strikann",
+		"Tabnine",
+		"vivaxy",
+		"Wetton",
+		"yzhang"
 	]
 }
