@@ -4,7 +4,7 @@ trailingComma: none
 printWidth: 100
 endOfLine: crlf
 arrowParens: avoid
-bracketSameLine: false
+# bracketSameLine: false
 bracketSpacing: true
 htmlWhitespaceSensitivity: strict
 proseWrap: always

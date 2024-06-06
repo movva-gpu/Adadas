@@ -14,7 +14,7 @@
  * @class coloring
  * This class contains static methods for text and background colors. Each method modifies the color of the input or background for the terminal.
  */
-export class coloring {
+export class Coloring {
 	/**
 	 * @description Makes the input bright.
 	 * @param {unknown} input - The value to be formatted.
@@ -230,51 +230,4 @@ export class coloring {
 	 */
 	static bgGray = (input?: unknown, preventStylePropagation = true) =>
 		'\x1b[100m' + (input ? input : '') + (preventStylePropagation && !!input ? '\x1b[0m' : '');
-}
-
-export class superConsole {
-	static log(message: unknown, id = 'Adadas'): void {
-		console.log(`[${this.superTimestamp()}][${id}] - ${message}`);
-	}
-
-	static warn(message: unknown, id = 'Adadas'): void {
-		console.log(
-			coloring.yellow(
-				`[${this.superTimestamp()}][${coloring.reverse('WARN')}${coloring.yellow()}][${id}] - ${message}`
-			)
-		);
-	}
-
-	static info(message: unknown, id = 'Adadas'): void {
-		console.log(
-			coloring.blue(
-				`[${this.superTimestamp()}][${coloring.reverse('INFO')}${coloring.blue()}][${id}] - ${message}`
-			)
-		);
-	}
-
-	static error(message: unknown, id = 'Adadas'): void {
-		console.log(
-			coloring.red(
-				`[${this.superTimestamp()}][${coloring.reverse('ERROR')}${coloring.red()}][${id}] - ${message}`
-			)
-		);
-	}
-
-	static ready(message: unknown, id = 'Adadas'): void {
-		console.log(
-			coloring.green(
-				`[${this.superTimestamp()}][${coloring.reverse('READY')}${coloring.green()}][${id}] - ${message}`
-			)
-		);
-	}
-
-	private static superTimestamp(): string {
-		const date = new Date(Date.now());
-		return (
-			`${date.getUTCMonth()}/${date.getUTCDate()}/${date.getUTCFullYear()}` +
-			' ' +
-			`${date.getUTCHours()}:${date.getUTCMinutes()}:${date.getUTCSeconds()}`
-		);
-	}
 }

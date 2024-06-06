@@ -1,11 +1,11 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import fs from 'fs';
-import { superConsole } from './utils';
+import * as sup3r from './utils/sup3r';
 
 // Verification checks
 if (!process.env.PORT) {
-	superConsole.warn('PORT is not defined in .env, switching to default port 3000.');
+	sup3r.con.warn('PORT is not defined in .env, switching to default port 3000.');
 }
 
 if (!process.env.MONGO_URI) {
@@ -25,10 +25,10 @@ const hasBeenBuilt = ((): false | string => {
 	try {
 		toReturn = fs.readFileSync('./build/handler.js').toString('utf-8');
 	} catch (err) {
-		superConsole.warn(
+		sup3r.con.warn(
 			'No build/handler.js file, front is probably not built or an error has occurred while reading the file.'
 		);
-		superConsole.warn('More information:' + err);
+		sup3r.con.warn('More information:' + err);
 	}
 
 	return toReturn;
@@ -41,10 +41,10 @@ App.use(express.json());
 
 App.use('/api', (_req, res, next) => {
 	// TODO: implement an actual API
-	superConsole.info('API not yet implemented.');
+	sup3r.con.info('API not yet implemented.');
 	res.status(404);
 	next();
-})
+});
 
 // If in production, or if vite has been built, use its handler
 if ((process.env.PRODUCTION && hasBeenBuilt) || hasBeenBuilt) {
@@ -55,21 +55,21 @@ if ((process.env.PRODUCTION && hasBeenBuilt) || hasBeenBuilt) {
 
 App.use((req, res, next) => {
 	console.log('');
-	superConsole.info(`${req.method} - ${req.url} - ${res.statusCode}`, 'express.js');
+	sup3r.con.info(`${req.method} - ${req.url} - ${res.statusCode}`, 'express.js');
 	next();
 });
 
 App.listen(PORT, () => {
-	superConsole.ready(`Server running on port ${PORT}.`, 'express.js');
+	sup3r.con.ready(`Server running on port ${PORT}.`, 'express.js');
 	mongoose
 		.connect(process.env.MONGO_URI as string)
 		.then(() => {
-			superConsole.ready('Connected to MongoDB!', 'mongoose');
+			sup3r.con.ready('Connected to MongoDB!', 'mongoose');
 			console.log('');
-			superConsole.ready('App started!');
+			sup3r.con.ready('App started!');
 		})
 		.catch(err =>
-			superConsole.error(
+			sup3r.con.error(
 				'An error occurred while trying to connect to MongoDB:\n    ' + err,
 				'mongoose'
 			)
